@@ -46,15 +46,15 @@ public class ReportingStructureServiceImplTest {
     @Test
     public void testTotalNumberOfReports() {
         String employeeIDWithFourReports = "16a596ae-edd3-4847-99fe-c4518e82c86f";
-        ReportingStructure report = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeID).getBody();
+        ReportingStructure report = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeIDWithFourReports).getBody();
         assertEquals(4, report.getNumberOfReports());
 
         String employeeIDWithTwoReports = "03aa1462-ffa9-4978-901b-7c001562cf6f";
-        ReportingStructure report2 = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeID).getBody();
+        ReportingStructure report2 = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeIDWithTwoReports).getBody();
         assertEquals(2, report2.getNumberOfReports());
 
         String employeeIDWithZeroReports = "c0c2293d-16bd-4603-8e08-638a9d18b22c";
-        ReportingStructure report3 = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeID).getBody();
+        ReportingStructure report3 = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeIDWithZeroReports).getBody();
         assertEquals(0, report3.getNumberOfReports());
     }
 
