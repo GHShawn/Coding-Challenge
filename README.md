@@ -1,3 +1,53 @@
+#Get Started
+
+##Prerequisite (Mac version)
+
+   1. Check if the java version is running on 17.0.1 (Modified the gradle version to 7.3 so it support java 17.0)
+   2. Install IDE (VS Code/IntelliJ)
+   3. Install Postman
+  
+
+##Steps:
+
+   1. Clone Repository 
+      ```git clone link```
+   2. Open the project folder in IDE (VS Code/IntelliJ)
+   3. Run command to start the application
+      ```./gradlew bootRun```
+      
+##API Endpoints
+
+###Task1 Get Total Number Of Reports By Employee ID
+```
+http://localhost:8080/reporting/16a596ae-edd3-4847-99fe-c4518e82c86f
+```
+
+###Task2 Compensation Create and Read
+1. POST
+
+```
+http://localhost:8080/compensation
+JSON Object
+
+   {   
+        "employee":{
+           "firstName": "John",
+           "lastName": "Smith",
+           "position": "SE",
+           "department": "Software Enginner",
+           "directReports": []
+       },
+       "salary": 900000,
+       "effectiveDate": "2020-02-05"
+    }
+```
+
+2.GET
+```
+http://localhost:8080/compensation/{id}
+```
+
+
 # Coding Challenge
 ## What's Provided
 A simple [Spring Boot](https://projects.spring.io/spring-boot/) web application has been created and bootstrapped 
