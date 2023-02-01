@@ -55,6 +55,7 @@ http://localhost:8080/compensation/{id}
 ## UNIT TEST
 Should be able to run the unit tests from the IDE
 
+----
 
 # Coding Challenge
 ## What's Provided
