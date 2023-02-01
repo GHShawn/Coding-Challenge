@@ -1,28 +1,33 @@
-#Get Started
+# Get Started
 
-##Prerequisite (Mac version)
+## Prerequisite (Mac version)
 
-   1. Check if the java version is running on 17.0.1 (Modified the gradle version to 7.3 so it support java 17.0)
+   1. Check if the java version is 17.0.1
+      * application gradle version set to 7.3 so it support JAVA 17.0
+      * if JAVA version is lower than 17.0 - downgrade the gradle version by change to gradle.properties file
+      * replace the url (https\://services.gradle.org/distributions/gradle-6.3-bin.zip)
    2. Install IDE (VS Code/IntelliJ)
    3. Install Postman
   
 
-##Steps:
+## Steps:
 
    1. Clone Repository 
-      ```git clone link```
+      ```git clone httplink```
    2. Open the project folder in IDE (VS Code/IntelliJ)
    3. Run command to start the application
       ```./gradlew bootRun```
+      Add permission if require
+      ```chmod 777 ./gradlew```
       
-##API Endpoints
+## API Endpoints
 
-###Task1 Get Total Number Of Reports By Employee ID
+### Task1 Get Total Number Of Reports By Employee ID
 ```
 http://localhost:8080/reporting/16a596ae-edd3-4847-99fe-c4518e82c86f
 ```
 
-###Task2 Compensation Create and Read
+### Task2 Compensation Create and Read
 1. POST
 
 ```
@@ -42,10 +47,13 @@ JSON Object
     }
 ```
 
-2.GET
+2. GET
 ```
 http://localhost:8080/compensation/{id}
 ```
+
+## UNIT TEST
+Should be able to run the unit tests from the IDE
 
 
 # Coding Challenge
