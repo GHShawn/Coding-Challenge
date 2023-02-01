@@ -34,22 +34,27 @@ public class CompensationServiceImplTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    //Setting up API ENDPOINT
     @Before
     public void setup() {
         compensationUrl = "http://localhost:" + port + "/compensation";
         compensationIdUrl = "http://localhost:" + port + "/compensation/{id}";
     }
 
+    //Test Create compensation API
+    //Test Read compensation by ID API
     @Test
     public void testCreateRead() {
 
 
+        //Initialize an employee object
         Employee testEmployee = new Employee();
         testEmployee.setFirstName("John");
         testEmployee.setLastName("Doe");
         testEmployee.setDepartment("Engineering");
         testEmployee.setPosition("Developer");
 
+        //Create compensation object
         Compensation testCompensation = new Compensation();
         testCompensation.setEmployee(testEmployee);
         testCompensation.setSalary(90000);

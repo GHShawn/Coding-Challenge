@@ -40,11 +40,22 @@ public class ReportingStructureServiceImplTest {
         reportingEmployeeIdUrl = "http://localhost:" + port + "/reporting/{id}";
     }
 
+    //Test total number of reports for an employee by calling reportingEmployeeIdUrl API
+    //Three test data was given
+    //Should expected to return 4, 2 and 0 number of reports for given employeeID.
     @Test
     public void testTotalNumberOfReports() {
-        String employeeID = "16a596ae-edd3-4847-99fe-c4518e82c86f";
+        String employeeIDWithFourReports = "16a596ae-edd3-4847-99fe-c4518e82c86f";
         ReportingStructure report = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeID).getBody();
         assertEquals(4, report.getNumberOfReports());
+
+        String employeeIDWithTwoReports = "03aa1462-ffa9-4978-901b-7c001562cf6f";
+        ReportingStructure report2 = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeID).getBody();
+        assertEquals(2, report2.getNumberOfReports());
+
+        String employeeIDWithZeroReports = "c0c2293d-16bd-4603-8e08-638a9d18b22c";
+        ReportingStructure report3 = restTemplate.getForEntity(reportingEmployeeIdUrl, ReportingStructure.class, employeeID).getBody();
+        assertEquals(0, report3.getNumberOfReports());
     }
 
    

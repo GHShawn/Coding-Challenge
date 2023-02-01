@@ -17,15 +17,21 @@ public class CompensationServiceImpl implements CompensationService {
     @Autowired
     private CompensationRepository compensationRepository;
 
+    //Create compensation
     @Override
     public Compensation create(Compensation compensation) {
         LOG.debug("Creating employee compensation[{}]", compensation);
+        //Set random compensation employee ID
         compensation.setEmployeeId(UUID.randomUUID().toString());
         compensationRepository.insert(compensation);
 
         return compensation;
     }
 
+    /*
+        Get employee compensation by employee id
+        if compensation is null, throw exception
+     */
     @Override
     public Compensation read(String id) {
         LOG.debug("Creating employee compensation with id [{}]", id);
